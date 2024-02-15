@@ -27,3 +27,44 @@ export const countVowels = (howManyVowels) => {
   return count;
 };
 console.log(countVowels('agua'));
+
+// 4. Crea una función que verifique si una cadena de texto recibida por parámetros es un pangrama (contiene todas las letras del abecedario).
+export const checkAbcString = (inputText) => {
+  const abc = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+  ];
+  const uniqueCharacters = [];
+  for (let i = 0; i < inputText.length; i++) {
+    const characters = inputText[i];
+    if (abc.includes(characters) && !uniqueCharacters.includes(characters)) {
+      uniqueCharacters.push(characters);
+    }
+  }
+  return uniqueCharacters.length === abc.length;
+};
+console.log(checkAbcString('abcdefghijmnopqrstuvwxyz'));
